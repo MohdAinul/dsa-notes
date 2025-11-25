@@ -1,0 +1,4 @@
+- Contiguous memory, index-based access
+- Access: O(1), Search: O(n)
+- Use C++ vector for dynamic array
+- Patterns: two pointers, sliding window
