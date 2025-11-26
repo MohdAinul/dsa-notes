@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<iostream> 
 using namespace std;
 
 void reverseArray(vector<int>& a) {
@@ -12,4 +12,5 @@ int main() {
     for(int x: a) cout<<x<<" ";
     cout<<"\n";
     return 0;
-}
+};
+
