@@ -10,33 +10,31 @@
  * right(right) {}
  * };
  */
-func balanceBST(root *TreeNode) *TreeNode {
-    arr := []int{}
-
-    var inorder func(*TreeNode)
-    inorder = func(node *TreeNode) {
-        if node == nil {
-            return
-        }
-        inorder(node.Left)
-        arr = append(arr, node.Val)
-        inorder(node.Right)
+class Solution {
+public:
+    // do bst to that we get sorted array
+    void inorder(TreeNode* root, vector<int>& arr) {
+        if (root == nullptr)
+            return;
+        inorder(root->left, arr);
+        arr.push_back(root->val);
+        inorder(root->right, arr);
     }
-
-    var build func(int, int) *TreeNode
-    build = func(left, right int) *TreeNode {
-        if left > right {
-            return nil
+    // now built a bst using inorder(sorted array)
+    TreeNode* builtBst(vector<int>& arr,int start, int end) {
+        if (start > end) {
+            return nullptr;
         }
-
-        mid := (left + right) / 2
-        node := &TreeNode{Val: arr[mid]}
-        node.Left = build(left, mid-1)
-        node.Right = build(mid+1, right)
-
-        return node
+        int mid = (start + end) / 2;
+        TreeNode* root = new TreeNode(arr[mid]);
+        root->left = builtBst(arr, start, mid - 1);
+        root->right = builtBst(arr, mid + 1, end);
+        return root;
     }
+    TreeNode* balanceBST(TreeNode* root) {
+        vector<int> arr;
+        inorder(root, arr);
 
-    inorder(root)
-    return build(0, len(arr)-1)
-}
+        return builtBst(arr, 0, arr.size() - 1);
+    }
+};
