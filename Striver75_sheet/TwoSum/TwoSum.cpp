@@ -1,18 +1,10 @@
-/* Two Sum : Check if a pair with given sum exists in Array
-
-Problem Statement: Given an array of integers arr[] and an integer target.
-
-1st variant: Return YES if there exist two numbers such that their sum is equal to the target. Otherwise, return NO.
-
-2nd variant: Return indices of the two numbers such that their sum is equal to the target. Otherwise, we will return {-1, -1}. */
-
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
 class Solution {
-public:
+   public:
     // Variant 1: Check if two numbers sum to target using hashing
     string twoSumExists(vector<int>& arr, int target) {
         unordered_map<int, int> mp;  // Map to store element -> index
@@ -59,7 +51,6 @@ int main() {
 
     return 0;
 }
-
 
 // Time Complexity: O(N) because we traverse the array only once, and each lookup or insertion in the hash map takes O(1) on average, where N is the size of the array.
 
