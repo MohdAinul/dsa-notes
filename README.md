@@ -1,4 +1,4 @@
-This repo contains topic-wise notes and small practice problems (not LeetCode).
+This repo contains topic-wise notes and small practice problems.
 Folders:
 - topics/: topic README files (arrays, strings, etc.)
 - practice/: small practice problems & exercises (short easy tasks)

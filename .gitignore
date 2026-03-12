@@ -1,0 +1,14 @@
+# Executables
+*.out
+*.exe
+*.o
+
+# Mac/Linux compiled binaries (no extension)
+a.out
+*.app
+
+# VS Code build outputs
+*.dSYM
+
+# System files
+.DS_Store
