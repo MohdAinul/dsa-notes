@@ -5,7 +5,8 @@ using namespace std;
 
 class Solution {
    public:
-    // Variant 1: Check if two numbers sum to target using hashing
+    // Better Approach
+    //  Variant 1: Check if two numbers sum to target using hashing
     string twoSumExists(vector<int>& arr, int target) {
         unordered_map<int, int> mp;  // Map to store element -> index
         int n = arr.size();
@@ -23,7 +24,8 @@ class Solution {
         return "NO";
     }
 
-    // Variant 2: Return indices of two numbers that sum to target using hashing
+    // Better Approach
+    //  Variant 2: Return indices of two numbers that sum to target using hashing
     vector<int> twoSumIndices(vector<int>& arr, int target) {
         unordered_map<int, int> mp;  // Map to store element -> index
         int n = arr.size();
