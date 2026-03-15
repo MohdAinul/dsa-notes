@@ -160,3 +160,38 @@ O(N)
 ```
 
 In the worst case, all elements of the array may be stored in the hash map.
+
+# Optimal Approach
+
+## Algorithm
+
+In this approach, we will first sort the array and will try to choose the numbers in a greedy way.
+
+1. We will keep a left pointer at the first index and a right pointer at the last index. Now until left < right, we will check the sum of arr[left] and arr[right]. Now if the sum < target, we need bigger numbers and so we will increment the left pointer. But if sum > target, we need to consider lesser numbers and so we will decrement the right pointer.
+
+2. If sum == target we will return either “YES” or the indices as per the question. But if the left crosses the right pointer, we will return “NO” or {-1, -1}.
+3. We will sort the given array first.
+4. Now, we will take two pointers i.e. left, which points to the first index, and right, which points to the last index.
+5. Now using a loop we will check the sum of arr[left] and arr[right] until left < right.
+6. If arr[left] + arr[right] > sum, we will decrement the right pointer.
+7. If arr[left] + arr[right] < sum, we will increment the left pointer.
+8. If arr[left] + arr[right] == sum, we will return the result.
+9. Finally, if no results are found we will return “NO” or {-1, -1}.
+
+# Complexity Analysis
+
+### Time Complexity:
+
+```
+O(N log N)
+```
+
+due to sorting the array initially, where N is the number of elements. The two-pointer traversal runs in O(N).
+
+### Space Complexity:
+
+```
+O(N)
+```
+
+because we store the array elements along with their original indices in a separate list or vector for sorting, maintaining original positions.
